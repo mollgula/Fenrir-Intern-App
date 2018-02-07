@@ -1,0 +1,28 @@
+<div class="container" style="margin-left: 40%;">
+    <div class="form-group text-center form-inline">
+            <div class="">
+                <h2 class="text-center">よく検索する用語</h2>
+                <%= form_tag(action: "join", controller: 'searchs') do %>
+                  <%= text_field_tag(
+                    :search, nil,
+                    id: "recipe_search",
+                    name: "keyname",
+                    placeholder: "よく食べるもの",
+                    style: "",
+                    :class => "form-control"
+                  )%>
+            <button title="追加" type="submit" class="btn btn-primary btn-default">追加</button>
+        <% end %>
+    </div>
+</div>
+
+<div class="container">
+    <ul>
+        <li><%= link_to  $join , action: 'joinSearch', controller: 'searchs' %></li>
+        <li><%= link_to  "ハンバーガー" , action: 'joinSearch', controller: 'searchs' %></li>
+        <li><%= link_to  "うどん" , action: 'joinSearch', controller: 'searchs' %></li>
+        <li><%= link_to  "ビタミン" , action: 'joinSearch', controller: 'searchs' %></li>
+        <li><%= link_to  "生姜焼き" , action: 'joinSearch', controller: 'searchs' %></li>
+        <li><%= link_to  "コロッケ" , action: 'joinSearch', controller: 'searchs' %></li>
+    </ul>
+</div>

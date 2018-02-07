@@ -1,0 +1,27 @@
+<div class="content container form-group">
+    <div id="search-box" class="row">
+      <%= form_tag(action: "search") do %>
+        <%= text_field_tag(
+            :search, nil,
+            id: "recipe_search",
+            name: "keyname",
+            placeholder: "食材名や料理名",
+            style: "",
+            :class => "form-control col"
+        )%>
+        <button title="検索" type="submit" class="form-control btn btn-primary">検索</button>
+      <% end %>
+  </div>
+  <div class="content">
+    <div id="search-box">
+        <%= form_tag(action: "join") do %>
+          <%= text_field_tag(
+            :search, nil,
+            id: "recipe_search",
+            name: "keyname",
+            placeholder: "よく食べるもの",
+            style: "width: 200px;"
+          )%>
+          <button title="追加" type="submit">追加</button>
+          <% end %>
+    </div>

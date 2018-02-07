@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Result</title>
+    <style>
+            #line {
+                text-decoration: none;
+                list-style: none;
+                word-wrap: break-word;
+                width: 200px;
+            }
+            #line2 {
+                text-decoration: none;
+                list-style: none;
+                word-wrap: break-word;
+                width: 120px;
+                float: left;
+            }
+            #line3 {
+                text-decoration: none;
+                list-style: none;
+                word-wrap: break-word;
+                width: 250px;
+                float: left;
+            }
+            #line4 {
+                text-decoration: none;
+                list-style: none;
+                word-wrap: break-word;
+                width: 210px;
+                float: left;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <h2 class="text-center">検索結果</h2>
+        </div>
+            <div class="container">
+              <div>
+                <h3 class="text-left">楽天レシピ</h3>
+                <ul>
+                    <% if @imgs_box.size === 0 && @titles_box.size === 0 && @urls_box.size === 0 %>
+                        <%= @no_message %>
+                    <% else %>
+                        <div class="row">
+                            <%  10.times do |i| %>
+                                <li id="line">
+                                    <%= link_to(image_tag(@imgs_box[i]), @urls_box[i], :target=>["_blank"], class: "col-xs-3") %>
+                                    <br>
+                                    <%= link_to @titles_box[i], @urls_box[i], :target=>["_blank"] %><p id="fabo">♡</p>
+                                </li>
+                            <% end %>
+                        </div>
+                    <% end %>
+                </ul>
+              </div>
+            </div>
+              <div class="container py-3">
+                <h3 class="">Cookpad</h3>
+                <ul>
+                <% if @imgs_box.size === 0 && @titles_box.size === 0 && @urls_box.size === 0 %>
+                    <%= @no_message %>
+                <% else %>
+                    <% 8.times do |i| %>
+                            <li id="line2">
+                                <%= link_to(image_tag(@imgs_box2[i]), @urls_box2[i], :target=>["_blank"], class: "col-xs-3") %>
+                                <br>
+                                <%= link_to @titles_box2[i], @urls_box2[i], :target=>["_blank"]%><p id="fabo">♡</p>
+                            </li>
+                    <% end %>
+                <% end %>
+                </ul>
+              </div>
+
+              <div class="container">
+                    <h3 class="text-right">kurashiru</h3>
+                <ul>
+                <% if @imgs_box.size === 0 && @titles_box.size === 0 && @urls_box.size === 0 %>
+                    <%= @no_message %>
+                <% else %>
+                    <%  8.times do |i| %>
+                        <li id="line3">
+                            <%= link_to(image_tag(@imgs_box3[i]), @urls_box3[i], :target=>["_blank"], class: "col-xs-3") %>
+                            <br>
+                            <%= link_to @titles_box3[i],  @urls_box3[i], :target=>["_blank"]%><p id="fabo">♡</p>
+                        </li>
+                    <% end %>
+                <% end %>
+                </ul>
+              </div>
+
+              <div class="container pt-2">
+                <h3 class="text-left">Nadia</h3>
+                <ul>
+                <% if @imgs_box.size === 0 && @titles_box.size === 0 && @urls_box.size === 0 %>
+                    <%= @no_message %>
+                <% else %>
+                    <%  5.times do |i| %>
+                        <li id="line4">
+                            <%= link_to(image_tag(@imgs_box4[i]), @urls_box4[i], :target=>["_blank"]) %>
+                            <br>
+                            <%= link_to @titles_box4[i], @urls_box4[i] %><p id="fabo">♡</p>
+                        </li>
+                    <% end %>
+                <% end %>
+                </ul>
+        </div>
+    <script>
+        $('#fabo').click(function(){
+            $('#fabo').css("color","red");
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<div class="container" style= "width: 300px;">
+    <%= form_for(:session, url: login_path) do |f| %>
+        <div class="row">
+            <div class="col-xs-5 form-signin">
+                <h1>ログイン</h1>
+                <%= f.label :email %>
+                <%= f.email_field :email, class: 'form-control' %>
+                <%= f.label :password %>
+                <%= f.password_field :password, class: 'form-control' %>
+                <div class="py-3">
+                <%= f.submit "ログイン", class: "btn btn-primary form-control" %>
+                </div>
+                <p>アカウントを持っていない？<%= link_to "新規登録", signup_path%></p>
+            </div>
+        </div>
+    <% end %>
+</div>
